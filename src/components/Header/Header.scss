@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__link-conduit{
+        color: #5CB85C;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 25px;
+        padding-left: 10%;
+    }
+    &__links{
+        display: flex;
+        padding-right: 10%;
+    }
+    .link{
+        text-decoration: none;
+        color: black;
+    }
+    ul{
+        list-style-type: none;
+    }
+}

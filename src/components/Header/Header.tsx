@@ -1,34 +1,30 @@
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 export const Header = () => {
-    return (
-        <div className="header">
-            <Link className='header__link-conduit' to={'/'}>
-                conduit
-            </Link>
-            <div className='header__links'>
-                <ul>
-                    <li>
-                        <Link className='link' to={'/'}>
-                            Home
-                        </Link>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <Link className='link' to={'/sign-in'}>
-                            Sign in
-                        </Link>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <Link className='link' to={'/sign-up'}>
-                            Sing up
-                        </Link>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className="header">
+      <nav className="header__menu">
+        <Link className="header__menu--logo" to={"/"}>
+          conduit
+        </Link>
+          <ul className="header__menu--nav">
+            <li>
+              <Link className="nav-item" to={"/"}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link className="nav-item" to={"/sign-in"}>
+                Sign in
+              </Link>
+            </li>
+            <li>
+              <Link className="nav-item" to={"/sign-up"}>
+                Sing up
+              </Link>
+            </li>
+          </ul>
+      </nav>
+    </div>
+  );
+};

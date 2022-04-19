@@ -1,5 +1,6 @@
 import { Article } from "../Article/Article"
 import {ArticleProps} from "src/types/ArticleTypes"
+import { useId } from "react"
 
 
 const data = [
@@ -34,9 +35,10 @@ const data = [
 
 
 export const Articles = () => {
+    const id = useId()
     return (
         <div className="articles--content">
-            {data.map((article: ArticleProps) => <Article article={article}/>)}
+            {data.map((article: ArticleProps) => <Article key={id} article={article}/>)}
         </div>
     )
 }

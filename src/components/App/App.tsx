@@ -5,8 +5,10 @@ import Home from 'src/components/Pages/Home';
 import './App.scss';
 import SignIn from '../Pages/Auth/SignIn';
 import SignUp from '../Pages/Auth/SignUp';
+import setRequestInterceptor from 'src/shared/interceptor/interceptor';
 
 function App() {
+  setRequestInterceptor()
   return (
     <div className="App">
        <Router>

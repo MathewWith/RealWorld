@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 export const Header = () => {
   return (
     <div className="header">
-      <nav className="header__menu">
-        <Link className="header__menu--logo" to={"/"}>
+      <nav className="header__nav">
+        <Link className="header__nav--logo" to={"/"}>
           conduit
         </Link>
-          <ul className="header__menu--nav">
+          <ul className="header__nav--items">
             <li>
               <Link className="nav-item" to={"/"}>
                 Home

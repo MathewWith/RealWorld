@@ -1,5 +1,5 @@
 .header {
-  &__menu {
+  &__nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -10,7 +10,7 @@
       font-weight: bold;
       font-size: 25px;
     }
-    &--nav {
+    &--items {
       list-style-type: none;
       display: flex;
       padding-right: 10%;

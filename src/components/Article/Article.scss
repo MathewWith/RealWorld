@@ -2,14 +2,17 @@
     border-top: 1px solid silver;
     box-sizing: border-box;
     padding: 0.5rem 0;
-    &__content--top{
+    &__content--user{
         display: flex;
         justify-content: space-between;
         padding: 0 0.5rem;
-        .content--top__user{
+        .content--user__info{
             display: flex;
             align-items: center;
-            .content--top__user--wrap{
+            img{
+                border-radius: 35px ; 
+            }
+            .content--user__info--wrap{
                 p{
                     margin: 0;
                     font-size: 12px;
@@ -23,7 +26,7 @@
                 }
             }
         }
-        .content--top__likes{
+        .content--user__likes{
             border: 1px solid #5CB85C;
             border-radius: 3px;
             display: flex;
@@ -33,11 +36,17 @@
             height: 1.5rem;
         }
     }
-    &__content--middle{
+    &__content--description{
         text-align: start;
         padding: 0 0.5rem;
+        h2{
+            margin-bottom: 0
+        }
+        p{
+            margin-top: 0 
+        }
     }
-    &__content--bottom{
+    &__content--info{
         display: flex;
         justify-content: space-between;
         padding: 0 0.5rem;

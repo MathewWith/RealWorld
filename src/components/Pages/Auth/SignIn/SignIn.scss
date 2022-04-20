@@ -7,17 +7,17 @@
         display: flex;
         flex-direction: column;
         text-align: center;
-        &--label{
+        &-label{
             margin: 0;
             font-weight: 400;
             font-size: 40px;
         }
-        &--link{
+        &-link{
             text-decoration: none;
             color: #5CB85C;
             margin: 1rem 0 2rem 0;
         }
-        &--link:hover{
+        &-link:hover{
             text-decoration: underline;
             color: #3e8a3e;
         }
@@ -29,7 +29,7 @@
             border: 1px solid silver;
             outline: none;
         }
-        &--btn{
+        &-btn{
             display: flex;
             justify-content: center;
             text-align: center;

@@ -2,17 +2,17 @@
     border-top: 1px solid silver;
     box-sizing: border-box;
     padding: 0.5rem 0;
-    &__content--user{
+    &__content-user{
         display: flex;
         justify-content: space-between;
         padding: 0 0.5rem;
-        .content--user__info{
+        .content-user__info{
             display: flex;
             align-items: center;
             img{
                 border-radius: 35px ; 
             }
-            .content--user__info--wrap{
+            .content-user__info-box{
                 p{
                     margin: 0;
                     font-size: 12px;
@@ -26,7 +26,7 @@
                 }
             }
         }
-        .content--user__likes{
+        .content-user__likes{
             border: 1px solid #5CB85C;
             border-radius: 3px;
             display: flex;
@@ -36,7 +36,7 @@
             height: 1.5rem;
         }
     }
-    &__content--description{
+    &__content-description{
         text-align: start;
         padding: 0 0.5rem;
         h2{
@@ -46,7 +46,7 @@
             margin-top: 0 
         }
     }
-    &__content--info{
+    &__content-info{
         display: flex;
         justify-content: space-between;
         padding: 0 0.5rem;

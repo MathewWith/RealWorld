@@ -12,8 +12,8 @@ export const SignIn = () => {
   return (
     <div className="sign-in">
       <form className="sign-in__form">
-        <h1 className="sign-in__form--label">Sign in</h1>
-        <Link to={"/sign-up"} className="sign-in__form--link">
+        <h1 className="sign-in__form-label">Sign in</h1>
+        <Link to={"/sign-up"} className="sign-in__form-link">
           Need an account?
         </Link>
         <input
@@ -29,7 +29,7 @@ export const SignIn = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button
-          className="sign-in__form--btn"
+          className="sign-in__form-btn"
           onClick={(e) => {
             stopDefAction(e);
             login({ email, password });

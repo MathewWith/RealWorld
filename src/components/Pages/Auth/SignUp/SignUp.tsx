@@ -13,8 +13,8 @@ export const SignUp = () => {
   return (
     <div className="sign-up">
       <form className="sign-up__form">
-        <h1 className="sign-up__form--label">Sign up</h1>
-        <Link to={"/sign-in"} className="sign-up__form--link">
+        <h1 className="sign-up__form-label">Sign up</h1>
+        <Link to={"/sign-in"} className="sign-up__form-link">
           Have an account?
         </Link>
         <input
@@ -36,7 +36,7 @@ export const SignUp = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button
-          className="sign-up__form--btn"
+          className="sign-up__form-btn"
           onClick={(e) => {
             stopDefAction(e);
             console.log('hi');

@@ -1,4 +1,5 @@
 import Articles from "src/components/Articles"
+import PopularTags from "src/components/PopularTags"
 
 export const Home = () => {
     return (
@@ -9,7 +10,14 @@ export const Home = () => {
                     <p className="banner-content__description">A place to share your knowledge</p>
                 </div>
             </div>
-            <Articles />
+            <div className="home-page__content">
+                <div className="home-page__content-articles">
+                    <Articles />
+                </div>
+                <div className="home-page__content-tags">
+                    <PopularTags />
+                </div>
+            </div>
         </div>
     )
 }

@@ -1,4 +1,18 @@
 .home-page{
+    &__content{
+      display: flex;
+      padding: 0 2rem;
+      &-articles{
+        width: 70%;
+      }
+      &-tags{
+        margin-left: 2rem;
+        width: 20%;
+      }
+    }
+    &__content:first-child{
+      width: 80%;
+    }
     &__banner{
         background-color: #5CB85C;
         color: #fff;

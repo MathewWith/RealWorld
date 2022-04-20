@@ -5,8 +5,8 @@ export const Home = () => {
         <div className="main-page">
             <div className="main-page__banner">
                 <div className="main-page__banner-content">
-                    <h1 className="banner__content-label">conduit</h1>
-                    <p className="banner__content-description">A place to share your knowledge</p>
+                    <h1 className="banner-content__label">conduit</h1>
+                    <p className="banner-content__description">A place to share your knowledge</p>
                 </div>
             </div>
             <Articles />

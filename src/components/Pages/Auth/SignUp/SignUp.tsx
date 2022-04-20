@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { registration } from "src/store/actions/auth";
+import registration from "src/store/actions/auth";
+import './SignUp.scss'
 
-export const SignUp = () => {
+const SignUp = ({registration}: {registration: any}) => {
   const [userName, setUserName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -50,3 +52,6 @@ export const SignUp = () => {
     </div>
   );
 };
+
+
+export default connect(null, registration)(SignUp)

@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { login } from "src/store/actions/auth";
+import login from "src/store/actions/auth";
+import './SignIn.scss'
 
-export const SignIn = () => {
+export const SignIn = ({login}: {login: any}) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
@@ -32,6 +34,8 @@ export const SignIn = () => {
           className="sign-in__form-btn"
           onClick={(e) => {
             stopDefAction(e);
+            console.log('log');
+            
             login({ email, password });
           }}
         >
@@ -41,3 +45,5 @@ export const SignIn = () => {
     </div>
   );
 };
+
+export default connect(null, login)(SignIn)

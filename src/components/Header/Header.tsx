@@ -3,28 +3,26 @@ import { Link } from "react-router-dom";
 export const Header = () => {
   return (
     <div className="header">
-      <nav className="header__nav">
-        <Link className="header__nav--logo" to={"/"}>
+        <Link className="header__logo" to={"/"}>
           conduit
         </Link>
-          <ul className="header__nav--items">
+          <ul className="header__nav">
             <li>
-              <Link className="nav-item" to={"/"}>
+              <Link className="header__nav--item" to={"/"}>
                 Home
               </Link>
             </li>
             <li>
-              <Link className="nav-item" to={"/sign-in"}>
+              <Link className="header__nav--item" to={"/sign-in"}>
                 Sign in
               </Link>
             </li>
             <li>
-              <Link className="nav-item" to={"/sign-up"}>
+              <Link className="header__nav--item" to={"/sign-up"}>
                 Sing up
               </Link>
             </li>
           </ul>
-      </nav>
     </div>
   );
 };

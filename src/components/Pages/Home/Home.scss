@@ -1,15 +1,15 @@
-.home--page{
+.main-page{
     &__banner{
         background-color: #5CB85C;
         color: #fff;
         padding: 2rem;
         margin-bottom: 2rem;
         box-shadow: inset 0 8px 8px -8px rgb(0 0 0 / 30%), inset 0 -8px 8px -8px rgb(0 0 0 / 30%);
-        &--content{
+        &-content{
             padding-left: 15px;
             padding-right: 15px;
             box-sizing: inherit;
-            .banner__content--label{
+            .banner__content-label{
                 text-shadow: 0px 1px 3px rgb(0 0 0 / 30%);
                 font-weight: 700;
                 text-align: center;
@@ -18,7 +18,7 @@
                 color: white;
                 margin: 0;
             }
-            .banner__content--description{
+            .banner__content-description{
                 color: #fff;
                 text-align: center;
                 font-size: 1.5rem;

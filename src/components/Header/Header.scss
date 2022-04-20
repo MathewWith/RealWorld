@@ -1,20 +1,19 @@
 .header {
-  &__nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    &--logo {
+    &__logo {
       padding-left: 10%;
       color: #5cb85c;
       text-decoration: none;
       font-weight: bold;
       font-size: 25px;
     }
-    &--items {
+    &__nav {
       list-style-type: none;
       display: flex;
       padding-right: 10%;
-      .nav-item {
+      &--item {
         text-decoration: none;
         color: black;
       }
@@ -23,4 +22,4 @@
       padding-right: 1rem;
     }
   }
-}
+

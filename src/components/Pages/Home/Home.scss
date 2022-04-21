@@ -1,5 +1,5 @@
 .home-page{
-    &__content{
+    &__box{
       display: flex;
       padding: 0 2rem;
       &-articles{
@@ -10,7 +10,7 @@
         width: 20%;
       }
     }
-    &__content:first-child{
+    &__box:first-child{
       width: 80%;
     }
     &__banner{

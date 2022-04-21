@@ -1,14 +1,14 @@
 import axios from "axios"
 import { LoginProps, RegistrationProps } from "src/types/AuthTypes"
 
-const registration = ({userName, email, password}: RegistrationProps) => {
+export const registration = ({userName, email, password}: RegistrationProps) => {
     return async (dispatch: any) => {
         const user = {username: userName, email, password}
         await axios.post('https://api.realworld.io/api/users', {user})
     }
 }
 
-const login = ({email, password}: LoginProps) => {
+export const login = ({email, password}: LoginProps) => {
     return async (dispatch: any) => {
         const user = {email, password}
         const response = await axios.post('https://api.realworld.io/api/users/login', {user})
@@ -17,5 +17,3 @@ const login = ({email, password}: LoginProps) => {
         // localStorage.setItem("JWT", response.data.token)
     }
 }
-
-export default {registration, login}

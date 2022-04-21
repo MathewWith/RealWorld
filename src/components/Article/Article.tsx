@@ -5,14 +5,14 @@ import { ArticleProps } from "src/types/ArticleTypes";
 
 export const Article = ({ article }: { article: ArticleProps }) => {
   return (
-    <div className="article">
-      <div className="article__content-user">
+    <div className="article-item">
+      <div className="article-item__content-user">
         <div className="content-user__info">
           <img
             src="https://api.realworld.io/images/demo-avatar.png"
             alt={article.img}
           />
-          <div className="content-user__info-box">
+          <div className="content-user__info-description">
             <Link to={""} className="link">
               {article.userName}
             </Link>
@@ -24,11 +24,11 @@ export const Article = ({ article }: { article: ArticleProps }) => {
           {article.likes}
         </div>
       </div>
-      <div className="article__content-description">
+      <div className="article-item__content-description">
         <h2>{article.title}</h2>
         <p>{article.description}</p>
       </div>
-      <div className="article__content-info">
+      <div className="article-item__content-info">
         <button>Read more...</button>
         <div>{article.tags}</div>
       </div>

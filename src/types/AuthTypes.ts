@@ -1,4 +1,5 @@
 
+
 export interface AuthAction {
     type: string,
     payload: any
@@ -13,4 +14,8 @@ export interface RegistrationProps {
 export interface LoginProps {
     email: string,
     password: string,
+}
+
+export interface State {
+    isLoggedIn: boolean
 }

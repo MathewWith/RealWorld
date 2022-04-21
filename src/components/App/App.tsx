@@ -3,8 +3,8 @@ import { Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 import Header from '../Header';
 import Home from 'src/components/Pages/Home';
 import './App.scss';
-import SignIn from 'src/components/Pages/Auth/SignIn/SignIn';
-import SignUp from 'src/components/Pages/Auth/SignUp/SignUp';
+import SignIn from 'src/components/Pages/Auth/SignIn';
+import SignUp from 'src/components/Pages/Auth/SignUp';
 import setRequestInterceptor from 'src/shared/interceptor/interceptor';
 
 function App() {

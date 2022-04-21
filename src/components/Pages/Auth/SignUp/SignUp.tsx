@@ -1,17 +1,15 @@
 import { useState } from "react";
-import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import registration from "src/store/actions/auth";
+import { useActions } from "src/components/hooks/useAction";
+import { stopDefAction } from "src/helpers/stopDefAction";
 import './SignUp.scss'
 
-const SignUp = ({registration}: {registration: any}) => {
+export const SignUp = () => {
   const [userName, setUserName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-
-  function stopDefAction(evt: any) {
-    evt.preventDefault();
-  }
+  const {registration} = useActions()
+  
   return (
     <div className="sign-up">
       <form className="sign-up__form">
@@ -41,8 +39,6 @@ const SignUp = ({registration}: {registration: any}) => {
           className="sign-up__form-btn"
           onClick={(e) => {
             stopDefAction(e);
-            console.log('hi');
-            
             registration({ userName, email, password });
           }}
         >
@@ -52,6 +48,3 @@ const SignUp = ({registration}: {registration: any}) => {
     </div>
   );
 };
-
-
-export default connect(null, registration)(SignUp)

@@ -35,7 +35,7 @@ const data = [
 
 export const Articles = () => {
     return (
-        <div className="articles--content">
+        <div className="articles-container">
             {data.map((article: ArticleProps) => <Article key={article.title} article={article}/>)}
         </div>
     )

@@ -12,7 +12,7 @@ export const Article = ({ article }: { article: ArticleProps }) => {
             src="https://api.realworld.io/images/demo-avatar.png"
             alt={article.img}
           />
-          <div className="content-user__info-box">
+          <div className="content-user__info-description">
             <Link to={""} className="link">
               {article.userName}
             </Link>

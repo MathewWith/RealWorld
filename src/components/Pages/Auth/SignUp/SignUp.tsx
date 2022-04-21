@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useActions } from "src/components/hooks/useAction";
-import { stopDefAction } from "src/helpers/stopDefAction";
+import { stopDefaultFormAction } from "src/helpers/stopDefaultFormAction";
 import './SignUp.scss'
 
 export const SignUp = () => {
@@ -38,7 +38,7 @@ export const SignUp = () => {
         <button
           className="sign-up__form-btn"
           onClick={(e) => {
-            stopDefAction(e);
+            stopDefaultFormAction(e);
             registration({ userName, email, password });
           }}
         >

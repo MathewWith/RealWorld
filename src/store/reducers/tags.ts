@@ -28,6 +28,7 @@ const initialState = [
         description: 'Exemplary fullstack Medium.com clone powered by React, Angular, Node, Django, and many more',
         tags: ['welcome']
     },
+    
 ]
 
 interface TagsAction {

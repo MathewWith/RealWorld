@@ -12,8 +12,7 @@ export const login = ({email, password}: LoginProps) => {
     return async (dispatch: any) => {
         const user = {email, password}
         const response = await axios.post('https://api.realworld.io/api/users/login', {user})
-        console.log('response>>>',response);
-        
-        // localStorage.setItem("JWT", response.data.token)
+        dispatch({type: 'LOGIN', payload: true})
+        localStorage.setItem("JWT", response.data.token)
     }
 }

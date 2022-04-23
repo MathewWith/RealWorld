@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 import { auth } from "./auth";
-import { tags } from "./tags";
+import { articles } from "./articles";
 
 
 export const reducer = combineReducers({
     auth,
-    tags
+    articles
 })
 
 export type RootType = ReturnType <typeof reducer>

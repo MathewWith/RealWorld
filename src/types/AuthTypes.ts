@@ -1,8 +1,7 @@
 
-
 export interface AuthAction {
     type: string,
-    payload: any
+    payload: boolean
 }
 
 export interface RegistrationProps {
@@ -16,6 +15,13 @@ export interface LoginProps {
     password: string,
 }
 
-export interface State {
-    isLoggedIn: boolean
+export interface AuthState {
+    isLoggedIn: boolean,
+    error: boolean
+}
+
+export enum AuthActionTypes {
+    REGISTRATION_ERROR = 'REGISTRATION_ERROR',
+    LOGIN = 'LOGIN',
+    LOGIN_ERROR = 'LOGIN_ERROR'
 }

@@ -1,3 +1,3 @@
-export function stopDefaultFormAction(event: any) {
+export function stopDefaultFormAction(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     event.preventDefault();
   }

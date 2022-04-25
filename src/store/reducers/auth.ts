@@ -1,4 +1,4 @@
-import { AuthAction } from "src/types/AuthTypes";
+import { AuthAction, AuthActionTypes } from "src/types/AuthTypes";
 
 const initialState = {
     isLoggedIn: true
@@ -6,7 +6,7 @@ const initialState = {
 
 export const auth = (state = initialState, action: AuthAction) => {
     switch(action.type){
-        case 'LOGIN':
+        case AuthActionTypes.LOGIN:
             return action.payload;
         default:
             return state

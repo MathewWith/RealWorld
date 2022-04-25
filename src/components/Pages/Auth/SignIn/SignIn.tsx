@@ -32,8 +32,6 @@ export const SignIn = () => {
           className="sign-in__form-btn"
           onClick={(e) => {
             stopDefaultFormAction(e);
-            console.log("log");
-
             login({ email, password });
           }}
         >

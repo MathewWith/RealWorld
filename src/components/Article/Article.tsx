@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import "./Article.scss";
 import { AiFillHeart } from "react-icons/ai";
-import { ArticleProps } from "src/types/ArticleTypes";
+import { ArticleItem } from "src/types/ArticleTypes";
 
-export const Article = ({ article }: { article: ArticleProps }) => {
+export const Article = ({ article }: { article: ArticleItem }) => {
   return (
     <div className="article">
       <div className="article__content-user">

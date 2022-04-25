@@ -1,7 +1,7 @@
 
 export interface AuthAction {
     type: string,
-    payload: any
+    payload: boolean
 }
 
 export interface RegistrationProps {
@@ -13,4 +13,8 @@ export interface RegistrationProps {
 export interface LoginProps {
     email: string,
     password: string,
+}
+
+export enum AuthActionTypes {
+    LOGIN = 'LOGIN'
 }

@@ -10,10 +10,10 @@ import { useActions } from "src/hooks/useActions";
 
 function App() {
   setRequestInterceptor();
-  const {getDataForArticles, getDefTags} = useActions()
+  const {getArticles, getDefTags} = useActions()
   useEffect(() => {
     const gettingData = async () => {
-      await getDataForArticles()
+      await getArticles()
       await getDefTags()
     }
     gettingData()

@@ -9,19 +9,19 @@ export const Article = ({ article }: { article: ArticleProps }) => {
       <div className="article__content-user">
         <div className="content-user__info">
           <img
-            src="https://api.realworld.io/images/demo-avatar.png"
-            alt={article.img}
+            src={article.author.image}
+            alt={article.author.username}
           />
           <div className="content-user__info-description">
             <Link to={""} className="link">
-              {article.userName}
+              {article.author.username}
             </Link>
-            <p>{article.date}</p>
+            <p>{article.createdAt}</p>
           </div>
         </div>
         <div className="content-user__likes">
           <AiFillHeart />
-          {article.likes}
+          {article.favoritesCount}
         </div>
       </div>
       <div className="article__content-description">
@@ -30,7 +30,7 @@ export const Article = ({ article }: { article: ArticleProps }) => {
       </div>
       <div className="article__content-info">
         <button>Read more...</button>
-        <div>{article.tags}</div>
+        <div>{article.tagList[0]}</div>
       </div>
     </div>
   );

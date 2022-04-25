@@ -1,7 +1,7 @@
 
 const initialState = {
     articles: [],
-    tags: {}
+    tags: []
 }
 
 interface TagsAction {
@@ -12,10 +12,15 @@ interface TagsAction {
 export const articles = (state = initialState, action: TagsAction) => {
     switch(action.type){
         case 'GET_ARTICLES':
-            console.log('action >> ',action.payload);
             return {
+                ...state,
                 articles: action.payload
             }  
+        case 'GET_DEFAULT_TAGS':
+            return {
+                ...state,
+                tags: action.payload
+            }
         default:
             return state
     }

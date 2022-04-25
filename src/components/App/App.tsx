@@ -10,12 +10,13 @@ import { useActions } from "src/hooks/useActions";
 
 function App() {
   setRequestInterceptor();
-  const {getDataForArticles} = useActions()
+  const {getDataForArticles, getDefTags} = useActions()
   useEffect(() => {
-    const getArticles = () => {
-      getDataForArticles()
+    const gettingData = async () => {
+      await getDataForArticles()
+      await getDefTags()
     }
-    getArticles()
+    gettingData()
   }, [])
   return (
     <div className="App">

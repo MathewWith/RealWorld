@@ -14,14 +14,14 @@ export const Article = ({ article }: { article: ArticleProps }) => {
           />
           <div className="content-user__info-box">
             <Link to={""} className="link">
-              {article.userName}
+              {article.author.username}
             </Link>
-            <p>{article.date}</p>
+            <p>{article.createdAt}</p>
           </div>
         </div>
         <div className="content-user__likes">
           <AiFillHeart />
-          {article.likes}
+          {article.favoritesCount}
         </div>
       </div>
       <div className="article__content-description">
@@ -30,7 +30,7 @@ export const Article = ({ article }: { article: ArticleProps }) => {
       </div>
       <div className="article__content-info">
         <button>Read more...</button>
-        <div>{article.tags}</div>
+        <div>{article.tagList}</div>
       </div>
     </div>
   );

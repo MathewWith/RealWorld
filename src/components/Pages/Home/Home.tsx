@@ -2,7 +2,7 @@ import Articles from "src/components/Articles"
 
 export const Home = () => {
     return (
-        <div className="home-page">
+        <div className="main-page">
             <div className="banner">
                 <div className="banner__content">
                     <h1 className="banner__content--label">conduit</h1>

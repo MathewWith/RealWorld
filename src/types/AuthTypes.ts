@@ -15,6 +15,14 @@ export interface LoginProps {
     password: string,
 }
 
+
+export interface AuthState {
+    isLoggedIn: boolean,
+    error: boolean
+}
+
 export enum AuthActionTypes {
-    LOGIN = 'LOGIN'
+    REGISTRATION_ERROR = 'REGISTRATION_ERROR',
+    LOGIN = 'LOGIN',
+    LOGIN_ERROR = 'LOGIN_ERROR'
 }

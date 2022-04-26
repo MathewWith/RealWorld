@@ -1,4 +1,4 @@
-.article{
+.article-item{
     border-top: 1px solid silver;
     box-sizing: border-box;
     padding: 0.5rem 0;
@@ -12,7 +12,7 @@
             img{
                 border-radius: 35px ; 
             }
-            .content-user__info-box{
+            &-description{
                 p{
                     margin: 0;
                     font-size: 12px;

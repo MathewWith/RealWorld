@@ -5,14 +5,14 @@ import { ArticleItem } from "src/types/ArticleTypes";
 
 export const Article = ({ article }: { article: ArticleItem }) => {
   return (
-    <div className="article">
-      <div className="article__content-user">
+    <div className="article-item">
+      <div className="article-item__content-user">
         <div className="content-user__info">
           <img
-            src="https://api.realworld.io/images/demo-avatar.png"
-            alt={article.img}
+            src={article.author.image}
+            alt={article.author.username}
           />
-          <div className="content-user__info-box">
+          <div className="content-user__info-description">
             <Link to={""} className="link">
               {article.author.username}
             </Link>
@@ -24,11 +24,11 @@ export const Article = ({ article }: { article: ArticleItem }) => {
           {article.favoritesCount}
         </div>
       </div>
-      <div className="article__content-description">
+      <div className="article-item__content-description">
         <h2>{article.title}</h2>
         <p>{article.description}</p>
       </div>
-      <div className="article__content-info">
+      <div className="article-item__content-info">
         <button>Read more...</button>
         <div>{article.tagList}</div>
       </div>

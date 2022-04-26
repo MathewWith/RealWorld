@@ -13,12 +13,12 @@ export const Header = () => {
               </Link>
             </li>
             <li>
-              <Link className="header__nav--item" to={"/sign-in"}>
+              <Link className="header__nav--item" to={"/login"}>
                 Sign in
               </Link>
             </li>
             <li>
-              <Link className="header__nav--item" to={"/sign-up"}>
+              <Link className="header__nav--item" to={"/register"}>
                 Sing up
               </Link>
             </li>

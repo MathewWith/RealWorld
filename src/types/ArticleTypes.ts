@@ -1,7 +1,6 @@
 
 export interface ArticleItem {
-    img: string,
-    author: {username: string},
+    author: {username: string, image: string},
     createdAt: string,
     favoritesCount: number,
     title: string,

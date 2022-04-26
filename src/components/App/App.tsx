@@ -1,20 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 import Header from '../Header';
 import Home from 'src/components/Pages/Home';
 import './App.scss';
 import SignIn from '../Pages/Auth/SignIn';
 import SignUp from '../Pages/Auth/SignUp';
+import { useActions } from 'src/hooks/useActions';
 
 function App() {
+  const {getDataForArticles} = useActions()
+  useEffect(() => {
+    const gettingData = async () => {
+      await getDataForArticles()
+    }
+    gettingData()
+  }, [])
   return (
     <div className="App">
        <Router>
           <Header />
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/sign-in' element={<SignIn />} />
-            <Route path='/sign-up' element={<SignUp />} />
+            <Route path='/login' element={<SignIn />} />
+            <Route path='/register' element={<SignUp />} />
           </Routes>
        </Router>
     </div>

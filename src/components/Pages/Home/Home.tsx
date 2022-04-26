@@ -1,3 +1,4 @@
+import Articles from "src/components/Articles"
 
 export const Home = () => {
     return (
@@ -8,6 +9,7 @@ export const Home = () => {
                     <p className="banner__content--description">A place to share your knowledge</p>
                 </div>
             </div>
+            <Articles />
         </div>
     )
 }

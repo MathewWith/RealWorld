@@ -12,11 +12,11 @@ function App() {
   setRequestInterceptor();
   const {getArticles, getDefTags} = useActions()
   useEffect(() => {
-    const gettingData = async () => {
+    const getData = async () => {
       await getArticles()
       await getDefTags()
     }
-    gettingData()
+    getData()
   }, [])
   return (
     <div className="App">

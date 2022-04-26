@@ -21,7 +21,6 @@ export interface AuthState {
 }
 
 export enum AuthActionTypes {
-    REGISTRATION_ERROR = 'REGISTRATION_ERROR',
     LOGIN = 'LOGIN',
-    LOGIN_ERROR = 'LOGIN_ERROR'
+    AUTH_ERROR = 'AUTH_ERROR'
 }

@@ -1,5 +1,5 @@
-import Form from "src/components/Form";
+import AuthForm from "src/components/AuthForm";
 import './SignUp.scss'
 
-export const SignUp = () => <Form flag={'registration'} />
+export const SignUp = () => <AuthForm flag={'registration'} />
 

@@ -4,7 +4,7 @@ import { stopDefaultFormAction } from "src/helpers/stopDefaultFormAction";
 import { useActions } from "../hooks/useAction";
 import { useTypedSelector } from "../hooks/useTypedSelector";
 
-export const Form = ({ flag }: { flag: string }) => {
+export const AuthForm = ({ flag }: { flag: string }) => {
   const [userName, setUserName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -17,21 +17,21 @@ export const Form = ({ flag }: { flag: string }) => {
       ) : (
         <form className="form-box__form">
           {flag === "registration" ? (
-            <React.Fragment>
+            <>
               {" "}
               <h1 className="form-box__form-label">Sign up</h1>
-              <Link to={"/sign-in"} className="form-box__form-link">
+              <Link to={"/login"} className="form-box__form-link">
                 Have an account?
               </Link>{" "}
-            </React.Fragment>
+            </>
           ) : (
-            <React.Fragment>
+            <>
               {" "}
               <h1 className="form-box__form-label">Sign in</h1>
-              <Link to={"/sign-up"} className="form-box__form-link">
+              <Link to={"/register"} className="form-box__form-link">
                 Need an account?
               </Link>{" "}
-            </React.Fragment>
+            </>
           )}
           {flag === "registration" ? (
             <input

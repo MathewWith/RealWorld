@@ -10,14 +10,9 @@ export const auth = (state = initialState, action: AuthAction): AuthState => {
         case AuthActionTypes.LOGIN:
             return {
                 ...state,
-                isLoggedIn: action.payload
+                isLoggedIn: true
             }
-        case AuthActionTypes.LOGIN_ERROR:
-            return {
-                ...state,
-                error: action.payload
-            }
-        case AuthActionTypes.REGISTRATION_ERROR:
+        case AuthActionTypes.AUTH_ERROR:
             return {
                 ...state,
                 error: action.payload

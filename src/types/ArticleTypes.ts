@@ -10,12 +10,15 @@ export interface ArticleItem {
 
 export interface ArticlesProps {
     articles: ArticleItem[],
-    tags: string[]
+    tags: string[],
+    activeTag: string
 }
 
 export enum ArticlesActionTypes {
     GET_ARTICLES = 'GET_ARTICLES',
-    GET_DEFAULT_TAGS = 'GET_DEFAULT_TAGS'
+    GET_DEFAULT_TAGS = 'GET_DEFAULT_TAGS',
+    SORT_ARTICLES_BY_TAG = 'SORT_ARTICLES_BY_TAG',
+    ADD_ACTIVE_TAG = 'ADD_ACTIVE_TAG',
 }
 
 interface GetArticles {
@@ -23,9 +26,19 @@ interface GetArticles {
     payload: ArticleItem[]
 }
 
+interface SortArticlesByTag {
+    type: ArticlesActionTypes.SORT_ARTICLES_BY_TAG,
+    payload: ArticleItem
+}
+
 interface GetDefaultTags {
     type: ArticlesActionTypes.GET_DEFAULT_TAGS,
     payload: string[]
 }
 
-export type ArticleAction = GetArticles | GetDefaultTags
+interface AddActiveTag {
+    type: ArticlesActionTypes.ADD_ACTIVE_TAG,
+    payload: string
+}
+
+export type ArticleAction = GetArticles | GetDefaultTags | SortArticlesByTag | AddActiveTag

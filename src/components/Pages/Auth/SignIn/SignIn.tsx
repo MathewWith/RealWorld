@@ -1,4 +1,4 @@
-import Form from "src/components/Form";
+import Form from "src/components/AuthForm";
 import "./SignIn.scss";
 
 export const SignIn = () => <Form flag={"login"} />

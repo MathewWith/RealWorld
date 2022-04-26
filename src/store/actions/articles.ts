@@ -1,10 +1,18 @@
 import axios from "axios"
+import { ArticlesActionTypes } from "src/types/ArticleTypes";
 
 
 export const sortArticles = (payload: any) => {
-    return {
-        type: 'SORT_ARTICLES_BY_TAG',
-        payload
+    return async (dispatch: any) => {
+        const response = await axios.get(`https://api.realworld.io/api/articles?tag=${payload}&limit=20&offset=0`);
+        dispatch({
+            type: ArticlesActionTypes.SORT_ARTICLES_BY_TAG,
+            payload: response.data.articles
+        })
+        dispatch({
+            type: ArticlesActionTypes.ADD_ACTIVE_TAG,
+            payload
+        })
     }
 }
 

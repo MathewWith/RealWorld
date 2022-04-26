@@ -14,7 +14,7 @@ export const registration = ({
       await axios.post("https://api.realworld.io/api/users", { user });
     }catch (error) {
       dispatch({
-        type: AuthActionTypes.REGISTRATION_ERROR,
+        type: AuthActionTypes.AUTH_ERROR,
         payload: true
       })
     }
@@ -38,7 +38,7 @@ export const login = ({
       return response.data
     }catch (error) {
       dispatch({
-        type: AuthActionTypes.LOGIN_ERROR,
+        type: AuthActionTypes.AUTH_ERROR,
         payload: true
       })
     }

@@ -1,37 +1,37 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { stopDefaultFormAction } from "src/helpers/stopDefaultFormAction";
-import { useActions } from "../hooks/useAction";
-import { useTypedSelector } from "../hooks/useTypedSelector";
+import { useActions } from "src/hooks/useActions";
+import { useTypedSelector } from "src/hooks/useTypedSelector";
 
-export const Form = ({ flag }: { flag: string }) => {
+export const AuthForm = ({ flag }: { flag: string }) => {
   const [userName, setUserName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const { login, registration } = useActions();
   const auth = useTypedSelector((state) => state.auth);
   return (
-    <div className="form-box">
+    <div className="auth-form">
       {auth.error ? (
-        <h1 className="form-box__error">Something went wrong</h1>
+        <h1 className="auth-form__error">Something went wrong</h1>
       ) : (
-        <form className="form-box__form">
+        <form className="auth-form__form">
           {flag === "registration" ? (
-            <React.Fragment>
+            <>
               {" "}
-              <h1 className="form-box__form-label">Sign up</h1>
-              <Link to={"/sign-in"} className="form-box__form-link">
+              <h1 className="auth-form__form-label">Sign up</h1>
+              <Link to={"/login"} className="auth-form__form-link">
                 Have an account?
               </Link>{" "}
-            </React.Fragment>
+            </>
           ) : (
-            <React.Fragment>
+            <>
               {" "}
-              <h1 className="form-box__form-label">Sign in</h1>
-              <Link to={"/sign-up"} className="form-box__form-link">
+              <h1 className="auth-form__form-label">Sign in</h1>
+              <Link to={"/register"} className="auth-form__form-link">
                 Need an account?
               </Link>{" "}
-            </React.Fragment>
+            </>
           )}
           {flag === "registration" ? (
             <input
@@ -54,7 +54,7 @@ export const Form = ({ flag }: { flag: string }) => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <button
-            className="form-box__form-btn"
+            className="auth-form__form-btn"
             onClick={(e) => {
               stopDefaultFormAction(e);
               flag === "registration"

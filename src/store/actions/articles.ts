@@ -23,11 +23,9 @@ export const getArticles = () => {
     } 
 }
 
-export const getDefTags = () => {
+export const getDefaultTags = () => {
     return async (dispatch: any) => {
         const response = await axios.get('https://api.realworld.io/api/tags')
-        console.log('getDef ',response.data.tags);
-        
          dispatch({type: 'GET_DEFAULT_TAGS', payload: response.data.tags})
     }
 }

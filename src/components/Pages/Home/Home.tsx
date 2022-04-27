@@ -1,5 +1,5 @@
 import Articles from "src/components/Articles";
-import PopularTags from "src/components/PopularTags";
+import Tags from "src/components/Tags";
 
 export const Home = () => {
   return (
@@ -17,7 +17,7 @@ export const Home = () => {
           <Articles />
         </div>
         <div className="main-page__box-tags">
-          <PopularTags />
+          <Tags />
         </div>
       </div>
     </div>

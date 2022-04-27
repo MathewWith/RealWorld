@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { stopDefaultFormAction } from "src/helpers/stopDefaultFormAction";
-import { useActions } from "../hooks/useAction";
-import { useTypedSelector } from "../hooks/useTypedSelector";
+import { useActions } from "src/hooks/useActions";
+import { useTypedSelector } from "src/hooks/useTypedSelector";
 
 export const AuthForm = ({ flag }: { flag: string }) => {
   const [userName, setUserName] = useState<string>("");
@@ -11,24 +11,24 @@ export const AuthForm = ({ flag }: { flag: string }) => {
   const { login, registration } = useActions();
   const auth = useTypedSelector((state) => state.auth);
   return (
-    <div className="form-box">
+    <div className="auth-form">
       {auth.error ? (
-        <h1 className="form-box__error">Something went wrong</h1>
+        <h1 className="auth-form__error">Something went wrong</h1>
       ) : (
-        <form className="form-box__form">
+        <form className="auth-form__form">
           {flag === "registration" ? (
             <>
               {" "}
-              <h1 className="form-box__form-label">Sign up</h1>
-              <Link to={"/login"} className="form-box__form-link">
+              <h1 className="auth-form__form-label">Sign up</h1>
+              <Link to={"/login"} className="auth-form__form-link">
                 Have an account?
               </Link>{" "}
             </>
           ) : (
             <>
               {" "}
-              <h1 className="form-box__form-label">Sign in</h1>
-              <Link to={"/register"} className="form-box__form-link">
+              <h1 className="auth-form__form-label">Sign in</h1>
+              <Link to={"/register"} className="auth-form__form-link">
                 Need an account?
               </Link>{" "}
             </>
@@ -54,7 +54,7 @@ export const AuthForm = ({ flag }: { flag: string }) => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <button
-            className="form-box__form-btn"
+            className="auth-form__form-btn"
             onClick={(e) => {
               stopDefaultFormAction(e);
               flag === "registration"

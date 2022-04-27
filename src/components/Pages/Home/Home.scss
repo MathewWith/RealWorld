@@ -1,4 +1,18 @@
 .main-page {
+  &__box{
+    display: flex;
+    padding: 0 5rem 0 12rem;
+    &-articles{
+      width: 70%;
+    }
+    &-tags{
+      margin-left: 2rem;
+      width: 20%;
+    }
+  }
+  &__box:first-child{
+    width: 80%;
+  }
   .banner {
     background-color: #5cb85c;
     color: #fff;

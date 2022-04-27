@@ -2,7 +2,8 @@ import axios from "axios";
 import { Dispatch } from "redux";
 import { AuthAction, AuthActionTypes, LoginProps, RegistrationProps } from "src/types/AuthTypes";
 
-const registration = ({
+
+export const registration = ({
   userName,
   email,
   password,
@@ -21,7 +22,7 @@ const registration = ({
   };
 };
 
-const login = ({
+export const login = ({
   email,
   password,
 }: LoginProps) => {
@@ -45,4 +46,3 @@ const login = ({
   };
 };
 
-export default { registration, login };

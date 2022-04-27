@@ -1,17 +1,14 @@
 import { Link } from "react-router-dom";
 import "./Article.scss";
 import { AiFillHeart } from "react-icons/ai";
-import { ArticleProps } from "src/types/ArticleTypes";
+import { ArticleItem } from "src/types/ArticleTypes";
 
-export const Article = ({ article }: { article: ArticleProps }) => {
+export const Article = ({ article }: { article: ArticleItem }) => {
   return (
     <div className="article-item">
       <div className="article-item__content-user">
         <div className="content-user__info">
-          <img
-            src={article.author.image}
-            alt={article.author.username}
-          />
+          <img src={article.author.image} alt={article.author.username} />
           <div className="content-user__info-description">
             <Link to={""} className="link">
               {article.author.username}
@@ -25,12 +22,16 @@ export const Article = ({ article }: { article: ArticleProps }) => {
         </div>
       </div>
       <div className="article-item__content-description">
-        <h2>{article.title}</h2>
+        <button><h2>{article.title}</h2></button>
         <p>{article.description}</p>
       </div>
       <div className="article-item__content-info">
         <button>Read more...</button>
-        <div>{article.tagList[0]}</div>
+        <div>
+          {article.tagList.map((tag: string) => (
+            <div className="article-item__content-info--tag">{tag}</div>
+          ))}
+        </div>
       </div>
     </div>
   );

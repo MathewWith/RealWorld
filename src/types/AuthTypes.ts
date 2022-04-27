@@ -15,6 +15,7 @@ export interface LoginProps {
     password: string,
 }
 
+
 export interface AuthState {
     isLoggedIn: boolean,
     error: boolean

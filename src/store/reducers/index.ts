@@ -8,4 +8,4 @@ export const reducer = combineReducers({
     articles
 })
 
-export type RootType = ReturnType<typeof reducer>
+export type RootType = ReturnType <typeof reducer>

@@ -1,0 +1,16 @@
+.tags{
+    height: 10rem;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    &__title{
+        margin: 0;
+        display: flex;
+        padding: 0.5rem 0 0 0.5rem;
+        font-size: 18px;
+    }
+    &__content{
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+    }
+}

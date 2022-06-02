@@ -3,7 +3,11 @@ import { ArticleAction, ArticlesActionTypes } from "src/types/ArticleTypes"
 const initialState = {
     articles: [],
     tags: [],
-    activeTag: ''
+    activeTag: '',
+    favoriteArticles: [],
+    isLikeLoadingActive: false,
+    likesCount: 0,
+    userArticles: []
 }
 
 export const articles = (state = initialState, action: ArticleAction) => {
@@ -29,6 +33,27 @@ export const articles = (state = initialState, action: ArticleAction) => {
                 ...state,
                 activeTag: action.payload
             }
+        case ArticlesActionTypes.GET_FAVORITE_ARTICLES:
+            return {
+                ...state,
+                favoriteArticles: action.payload
+            }
+        case ArticlesActionTypes.PUT_LIKE:
+            return {
+                ...state,
+                isLikeLoadingActive: false,
+                likesCount: action.payload.favoritesCount
+            }
+        case ArticlesActionTypes.SET_LIKE_LOADING:
+            return {
+                ...state,
+                isLikeLoadingActive: action.payload
+            }
+        case ArticlesActionTypes.GET_USER_ARTICLES:
+            return {
+                ...state,
+                userArticles: action.payload,
+            };
         default:
             return state
     }

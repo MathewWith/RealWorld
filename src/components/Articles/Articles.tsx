@@ -15,19 +15,56 @@ export const Articles = () => {
     : "feed-toggle__active-tag--none";
 
   return (
-    <div className="articles-content">
-      <div className="feed-toggle">
-        <button className={buttonClass} onClick={() => getArticles()}>
-          Global Feed
-        </button>
-        <div className={activeTagClass}>
-          <div>#</div>
-          {data.activeTag}
+    <>
+      {localStorage.getItem("JWT") ? (
+        <div className="articles-content">
+          <div className="feed-toggle">
+            <button className={buttonClass} onClick={() => getArticles()}>
+              Your Feed
+            </button>
+            <button className={buttonClass} onClick={() => getArticles()}>
+              Global Feed
+            </button>
+            <div className={activeTagClass}>
+              <div>#</div>
+              {data.activeTag}
+            </div>
+          </div>
+          {data.articles.map((article: ArticleItem) => (
+            <Article key={article.title} article={article} />
+          ))}
         </div>
-      </div>
-      {data.articles.map((article: ArticleItem) => (
-        <Article key={article.title} article={article} />
-      ))}
-    </div>
+      ) : (
+        <div className="articles-content">
+          <div className="feed-toggle">
+            <button className={buttonClass} onClick={() => getArticles()}>
+              Global Feed
+            </button>
+            <div className={activeTagClass}>
+              <div>#</div>
+              {data.activeTag}
+            </div>
+          </div>
+          {data.articles.map((article: ArticleItem) => (
+            <Article key={article.title} article={article} />
+          ))}
+        </div>
+      )}
+    </>
   );
 };
+
+// <div className="articles-content">
+//       <div className="feed-toggle">
+//         <button className={buttonClass} onClick={() => getArticles()}>
+//           Global Feed
+//         </button>
+//         <div className={activeTagClass}>
+//           <div>#</div>
+//           {data.activeTag}
+//         </div>
+//       </div>
+//       {data.articles.map((article: ArticleItem) => (
+//         <Article key={article.title} article={article} />
+//       ))}
+//     </div>

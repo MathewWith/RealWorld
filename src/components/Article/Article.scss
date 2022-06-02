@@ -33,7 +33,19 @@
             color: #5CB85C;
             margin-top: 0.5rem;
             padding: 0 0.5rem;
+            background-color: white;
             height: 1.5rem;
+        }
+        .content-user__likes--loading{
+            border: 1px solid #5CB85C;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            color: #5CB85C;
+            margin-top: 0.5rem;
+            padding: 0 0.5rem;
+            height: 1.5rem;
+            cursor:wait;
         }
     }
     &__content-description{

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { stopDefaultFormAction } from "src/helpers/stopDefaultFormAction";
 import { useActions } from "src/hooks/useActions";
 import { useTypedSelector } from "src/hooks/useTypedSelector";
+import { UserState } from "src/types/UserTypes";
 
-export const AuthForm = ({ flag }: { flag: string }) => {
+export const AuthForm = ({ authType }: { authType: string }) => {
   const [userName, setUserName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -16,7 +17,7 @@ export const AuthForm = ({ flag }: { flag: string }) => {
         <h1 className="auth-form__error">Something went wrong</h1>
       ) : (
         <form className="auth-form__form">
-          {flag === "registration" ? (
+          {authType === "registration" ? (
             <>
               {" "}
               <h1 className="auth-form__form-label">Sign up</h1>
@@ -33,7 +34,7 @@ export const AuthForm = ({ flag }: { flag: string }) => {
               </Link>{" "}
             </>
           )}
-          {flag === "registration" ? (
+          {authType === "registration" ? (
             <input
               type="text"
               placeholder="Username"
@@ -48,7 +49,7 @@ export const AuthForm = ({ flag }: { flag: string }) => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
-            type="text"
+            type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -57,7 +58,7 @@ export const AuthForm = ({ flag }: { flag: string }) => {
             className="auth-form__form-btn"
             onClick={(e) => {
               stopDefaultFormAction(e);
-              flag === "registration"
+              authType === "registration"
                 ? registration({ userName, email, password })
                 : login({ email, password });
             }}

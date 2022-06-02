@@ -34,7 +34,9 @@ export const login = ({
         { user }
       );
       dispatch({type: "LOGIN", payload: true})
-      localStorage.setItem("JWT", response.data.token)
+      console.log('token >> ', response.data.user.token);
+      localStorage.setItem("JWT", response.data.user.token);
+      window.location.replace('/')
       return response.data
     }catch (error) {
       dispatch({
@@ -46,3 +48,4 @@ export const login = ({
   };
 };
 
+// window.location.assign(`/profile/${response.data.user.username}`)

@@ -4,7 +4,8 @@ import Tags from "src/components/Tags";
 export const Home = () => {
   return (
     <div className="main-page">
-      <div className="banner">
+      {localStorage.getItem("JWT") ? <br /> : 
+        <div className="banner">
         <div className="banner__content">
           <h1 className="banner__content--label">conduit</h1>
           <p className="banner__content--description">
@@ -12,6 +13,7 @@ export const Home = () => {
           </p>
         </div>
       </div>
+      }
       <div className="main-page__box">
         <div className="main-page__box-articles">
           <Articles />

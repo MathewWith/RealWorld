@@ -1,10 +1,10 @@
-import { ArticleItem } from "./ArticleTypes"
-
 export enum UserActionTypes {
     GET_USER_PROFILE = 'GET_USER_PROFILE',
     GET_USER_ARTICLES = 'GET_USER_ARTICLES',
     GET_FAVORITE_ARTICLES = 'GET_FAVORITE_ARTICLES',
-    GET_AUTH_USER = 'GET_AUTH_USER'
+    GET_AUTH_USER = 'GET_AUTH_USER',
+    FOLLOW_USER = 'FOLLOW_USER',
+    UNFOLLOW_USER = 'UNFOLLOW_USER'
 }
 
 export interface UserItem {
@@ -25,7 +25,6 @@ export interface AuthUser {
 export interface UserState {
     profile: UserItem,
     authProfile: AuthUser,
-    // userArticles: ArticleItem[]
 }
 
 export interface UserAction {

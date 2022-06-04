@@ -3,12 +3,12 @@ import { UserActionTypes } from "src/types/UserTypes";
 
 export const getAuthUser = () => {
   return async (dispatch: any) => {
-    if(localStorage.getItem("JWT")) {
+    if (localStorage.getItem("JWT")) {
       const response = await axios.get(`https://api.realworld.io/api/user`);
-    dispatch({ 
-        type: UserActionTypes.GET_AUTH_USER, 
-        payload: response.data.user 
-    });
+      dispatch({
+        type: UserActionTypes.GET_AUTH_USER,
+        payload: response.data.user,
+      });
     }
   };
 };
@@ -45,6 +45,27 @@ export const follow = (userName: string) => {
         const response = await axios.post(
           `https://api.realworld.io/api/profiles/${userName}/follow`
         );
+        dispatch({ type: UserActionTypes.FOLLOW_USER, payload: response.data });
+        return response.data;
+      } else window.location.replace("/register");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const unfollow = (userName: string) => {
+  return async (dispatch: any) => {
+    try {
+      const JWT = localStorage.getItem("JWT");
+      if (JWT) {
+        const response = await axios.delete(
+          `https://api.realworld.io/api/profiles/${userName}/follow`
+        );
+        dispatch({
+          type: UserActionTypes.UNFOLLOW_USER,
+          payload: response.data,
+        });
         return response.data;
       } else window.location.replace("/register");
     } catch (error) {

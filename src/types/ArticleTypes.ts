@@ -8,12 +8,14 @@ export interface ArticleItem {
 }
 
 export interface ArticlesProps {
-  articles: ArticleItem[];
+  globalArticles: ArticleItem[];
+  sortedByTagArticles: ArticleItem[];
+  favoriteArticles: ArticleItem[];
+  yourFeedArticles: ArticleItem[];
   tags: string[];
   activeTag: string;
-  favoriteArticles: ArticleItem[];
   isLikeLoadingActive: boolean;
-  likesCount: number,
+  likesCount: number;
   userArticles: ArticleItem[]
 }
 
@@ -26,11 +28,17 @@ export enum ArticlesActionTypes {
   GET_USER_ARTICLES = "GET_USER_ARTICLES",
   GET_FAVORITE_ARTICLES = "GET_FAVORITE_ARTICLES",
   SET_LIKE_LOADING = "SET_LIKE_LOADING",
+  GET_YOUR_FEED_ARTICLES = "GET_YOUR_FEED_ARTICLES"
 }
 
 interface SetLikeLoading {
   type: ArticlesActionTypes.SET_LIKE_LOADING;
   payload: boolean;
+}
+
+interface GetYourFeedArticles {
+  type: ArticlesActionTypes.GET_YOUR_FEED_ARTICLES;
+  payload: ArticleItem[];
 }
 
 interface PutLike {
@@ -76,4 +84,5 @@ export type ArticleAction =
   | GetUserArticles
   | GetFavoriteArticles
   | PutLike
-  | SetLikeLoading;
+  | SetLikeLoading
+  | GetYourFeedArticles;

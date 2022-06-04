@@ -1,10 +1,12 @@
 import { ArticleAction, ArticlesActionTypes } from "src/types/ArticleTypes"
 
 const initialState = {
-    articles: [],
+    globalArticles: [],
+    sortedByTagArticles: [],
+    favoriteArticles: [],
+    yourFeedArticles: [],
     tags: [],
     activeTag: '',
-    favoriteArticles: [],
     isLikeLoadingActive: false,
     likesCount: 0,
     userArticles: []
@@ -15,7 +17,7 @@ export const articles = (state = initialState, action: ArticleAction) => {
         case ArticlesActionTypes.GET_ARTICLES:
             return {
                 ...state,
-                articles: action.payload,
+                globalArticles: action.payload,
                 activeTag: ''
             }  
         case ArticlesActionTypes.GET_DEFAULT_TAGS:
@@ -26,7 +28,7 @@ export const articles = (state = initialState, action: ArticleAction) => {
         case ArticlesActionTypes.SORT_ARTICLES_BY_TAG:
             return {
                 ...state,
-                articles: action.payload
+                sortedByTagArticles: action.payload
             }
         case ArticlesActionTypes.ADD_ACTIVE_TAG: 
             return {
@@ -54,6 +56,11 @@ export const articles = (state = initialState, action: ArticleAction) => {
                 ...state,
                 userArticles: action.payload,
             };
+        case ArticlesActionTypes.GET_YOUR_FEED_ARTICLES:
+            return {
+                ...state,
+                yourFeedArticles: action.payload
+            }
         default:
             return state
     }

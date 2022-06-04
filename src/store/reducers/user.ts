@@ -34,6 +34,22 @@ export const user = (state = initialState, action: UserAction) => {
         ...state,
         authProfile: action.payload,
       };
+    case UserActionTypes.FOLLOW_USER: 
+      return {
+        ...state,
+        profile: {
+          ...state.profile,
+          following: action.payload.following
+        } 
+      }
+    case UserActionTypes.UNFOLLOW_USER: 
+      return {
+        ...state,
+        profile: {
+          ...state.profile,
+          following: action.payload.following
+        } 
+      }  
     default:
       return state;
   }

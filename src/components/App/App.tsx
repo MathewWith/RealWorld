@@ -23,11 +23,6 @@ function App() {
         getAuthUser()
       ]
       )
-      // await getArticles();
-      // await getDefaultTags();
-      // if (localStorage.getItem("JWT")) {
-      //   await getAuthUser();
-      // }
     };
     getData();
   }, []);

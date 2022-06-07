@@ -5,8 +5,8 @@ import { ArticleProps } from "src/types/ArticleTypes";
 
 export const Article = ({ article }: { article: ArticleProps }) => {
   return (
-    <div className="article">
-      <div className="article__content-user">
+    <div className="article-item">
+      <div className="article-item__content-user">
         <div className="content-user__info">
           <img
             src={article.author.image}
@@ -24,11 +24,11 @@ export const Article = ({ article }: { article: ArticleProps }) => {
           {article.favoritesCount}
         </div>
       </div>
-      <div className="article__content-description">
+      <div className="article-item__content-description">
         <h2>{article.title}</h2>
         <p>{article.description}</p>
       </div>
-      <div className="article__content-info">
+      <div className="article-item__content-info">
         <button>Read more...</button>
         <div>{article.tagList[0]}</div>
       </div>

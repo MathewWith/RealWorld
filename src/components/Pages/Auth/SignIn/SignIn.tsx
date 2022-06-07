@@ -1,8 +1,4 @@
+import AuthForm from "src/components/AuthForm";
+import "./SignIn.scss";
 
-export const SignIn = () => {
-    return (
-        <div>
-            SignIn
-        </div>
-    )
-}
+export const SignIn = () => <AuthForm flag={"login"} />

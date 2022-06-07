@@ -6,7 +6,7 @@ import { useTypedSelector } from "src/hooks/useTypedSelector"
 export const Articles = () => {
     const data = useTypedSelector((state) => state.articles.articles)
     return (
-        <div className="articles--content">
+        <div className="articles-container">
             {data.map((article: ArticleProps) => <Article key={article.title} article={article}/>)}
         </div>
     )
